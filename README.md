@@ -9,3 +9,4 @@
 # to use local image, after build is finished, go to deployment in dashboard, edit the flaskapp, look for "imagePullPolicy" and change it to "Never"
 # wait a few seconds and it should start working
 # more info here -> https://minikube.sigs.k8s.io/docs/start/
+# loadbalancer -> https://minikube.sigs.k8s.io/docs/handbook/accessing/#using-minikube-tunnel
