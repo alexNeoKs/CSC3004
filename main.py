@@ -100,5 +100,4 @@ def disconnect():
     print(f"{name} has left the room {room}")
 
 if __name__ == "__main__":
-    # socketio.run(app, host='0.0.0.0' ,  threaded=True , debug=True )
-    app.run( host='0.0.0.0' , ssl_context=('chatserver.pem', 'chatserver.key') , threaded=True , debug=True )
+    socketio.run(app, host='0.0.0.0' ,  ssl_context=('chatserver.pem', 'chatserver.key') , allow_unsafe_werkzeug=True )
