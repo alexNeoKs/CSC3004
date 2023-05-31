@@ -4,16 +4,21 @@ metadata:
   name: flask-ingress
   namespace: default
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: / 
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    #nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  tls:
+  - hosts: 
+    - chatserver.com
+    secretName: chatserver-tls
   rules:
-    - host: testchatsit.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: flask-service
-                port:
-                  number: 5000
+  - host: chatserver.com
+    http:
+      paths:
+        - path: /
+          pathType: Prefix
+          backend:
+            service:
+              name: flask-service
+              port:
+                number: 5000
