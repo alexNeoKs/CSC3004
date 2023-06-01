@@ -12,7 +12,10 @@ EXPOSE 5000
 
 CMD ["python3","main.py"]
 
-
+# minikube docker-env
+# eval $(minikube -p minikube docker-env)
+# eval $(minikube             docker-env)  # mandatory for minikube
+# minikube image load chatserver:latest
 # docker build -t chatserver .
 # docker login --username <username>
 # docker tag localimage:version remoteregistry:version

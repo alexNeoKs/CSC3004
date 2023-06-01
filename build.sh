@@ -1,2 +1,2 @@
 #! /bin/sh
-docker build -t chart-server .
+docker build -t chartserver .
