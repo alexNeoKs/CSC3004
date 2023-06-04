@@ -13,9 +13,13 @@ EXPOSE 5000
 CMD ["python3","main.py"]
 
 # minikube docker-env
-# eval $(minikube -p minikube docker-env)
-# eval $(minikube             docker-env)  # mandatory for minikube
+# eval $(minikube docker-env)  # mandatory for minikube
+# minikube start
+# minikube image build -t chatserver .
 # minikube image load chatserver:latest
+# minikube image ls
+# kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
+
 # docker build -t chatserver .
 # docker login --username <username>
 # docker tag localimage:version remoteregistry:version

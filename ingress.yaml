@@ -14,7 +14,7 @@ spec:
   - host: chatserver.com
     http:
       paths:
-        - path: /
+        - path: /encrypted
           pathType: Prefix
           backend:
             service:
