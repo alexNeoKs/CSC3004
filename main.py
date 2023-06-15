@@ -5,6 +5,8 @@ from string import ascii_uppercase
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "hjhjsdahhds"
+# app.config["APPLICATION_ROOT"] = "/encrypted"
+app.static_folder = 'static'
 socketio = SocketIO(app)
 
 rooms = {}
