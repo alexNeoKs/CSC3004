@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<form method="post" class="buttons">
+<!-- <form method="post" class="buttons">
   <h3>Enter The Chat Room</h3>
   <div>
     <label>asd123:</label>
@@ -20,5 +20,124 @@
     <li>{{error}}</li>
   </ul>
   {% endif %}
-</form>
+</form> -->
+
+<img src="{{ url_for('static', filename='images/home.png') }}" alt="Image" id="homePageImg">
+<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Image" id="homePagelogo">
+<h3 id="homePageTitle">
+    Unlock Healing<br>
+    with the Comforts of Privacy
+</h3>
+<p id="homePageTitleDesc">
+    With our list of certified therapists, choose to chat <br> with any who are online
+    Or create your own room, <br>and converse with those who share similar experiences.
+</p>
+<button type="submit" id="createRoomButton">Create Room</button>
+<button type="submit" id="JoinRoomButton">Join A Room</button>
+
+<div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Popup</h2>
+      <form id="popupForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <button type="submit" class="chat-send">Submit</button>
+      </form>
+    </div>
+</div>
+
+<div id="popup2" class="popup">
+    <div class="popup-content">
+      <h2>Popup 2</h2>
+      <form id="popupForm2">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <button type="submit" class="chat-send">Submit</button>
+      </form>
+    </div>
+</div>
+
+
+
+<!-- This is the chatbot section -->
+<div id="chatBotButton" class="chat-toggle">
+    <i class="fa-solid fa-robot fa-bounce"></i>
+</div>
+<div class="chat-popup">
+    <div class="chat-container">
+        <header class="chat-header">
+            <h3>Chat</h3>
+            <button class="chat-close">Close</button>
+        </header>
+        <div class="chat-messages">
+            <!-- Chat messages go here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message">
+            <button class="chat-send">Send</button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var chatToggle = document.querySelector('.chat-toggle');
+        var chatPopup = document.querySelector('.chat-popup');
+        var chatClose = document.querySelector('.chat-close');
+    
+        chatToggle.addEventListener('click', function() {
+            chatPopup.style.display = 'block';
+        });
+    
+        chatClose.addEventListener('click', function() {
+            chatPopup.style.display = 'none';
+        });
+    });
+
+
+    document.getElementById('createRoomButton').addEventListener('click', function() {
+        document.getElementById('popup').style.display = 'block';
+      });
+      
+    document.getElementById('popupForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get the input values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+    
+        // Perform actions with the input values (e.g., send data to server, perform validation, etc.)
+        
+        // Close the popup
+        document.getElementById('popup').style.display = 'none';
+    });
+
+
+    document.getElementById('JoinRoomButton').addEventListener('click', function() {
+        document.getElementById('popup2').style.display = 'block';
+      });
+      
+    document.getElementById('popupForm2').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Get the input values
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+    
+        // Perform actions with the input values (e.g., send data to server, perform validation, etc.)
+        
+        // Close the popup
+        document.getElementById('popup2').style.display = 'none';
+    });
+</script>
+
 {% endblock %}
