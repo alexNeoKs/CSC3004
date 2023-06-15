@@ -6,7 +6,6 @@ if __name__ == '__main__':
 
     context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH, cafile="client/certs/ca-certificates.crt")
     context.load_cert_chain(certfile="client/certs/client.crt", keyfile="client/certs/client.key")
-    #context.verify_mode = ssl.CERT_REQUIRED
     print("SSL context created")
 
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
