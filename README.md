@@ -43,6 +43,17 @@ wait a few seconds and you should see it working in the dashboard
 # loadbalancer -> https://minikube.sigs.k8s.io/docs/handbook/accessing/#using-minikube-tunnel
 
 
+### Common Errors and solutions
+<p>
+Internal Server Error<br/>
+The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.
+</p>
+<p>
+ Rerun the startchatserver.bat and wait 1min <br/>
+ Ensure docker is running and the url is correct <br/>
+ Current implementation is : chatserver.com/
+ 
+</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
