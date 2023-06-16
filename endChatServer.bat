@@ -1,3 +1,4 @@
+docker rmi chatserver:latest
 kubectl delete ingress    flask-ingress
 kubectl delete secret     chatserver-tls
 kubectl delete service    flask-service

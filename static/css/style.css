@@ -73,8 +73,10 @@ h2 {
 #homePageImg {
     max-width: 50%;
     height: auto;
-    margin-left:45%;
-    margin-top:5%;
+    /* margin-left:45%;
+    margin-top:5%; */
+    top:15%;
+    right : 5%;
     position: absolute;
 }
 #homePagelogo {
@@ -255,6 +257,4 @@ margin-bottom: 10px;
 .popup-content button {
 padding: 10px;
 }
-
-
 
