@@ -9,11 +9,6 @@ kubectl get deployment flask-app --output=wide
 kubectl apply -f service.yaml
 kubectl get service flask-service --output=wide
 
-kubectl apply -f service2.yaml
-kubectl get service flask-service-2 --output=wide
-
-kubectl apply -f service3.yaml
-kubectl get service flask-service-3 --output=wide
 
 
 

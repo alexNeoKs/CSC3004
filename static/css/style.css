@@ -1,3 +1,13 @@
+/*Css for room and base home*/
+
+/* Reset default styles for better consistency */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
 .content {
     display: flex;
     align-items: center;
@@ -131,7 +141,7 @@ button[type="submit"]:hover {
     top: 70%;
 }
 
-
+/*Css for chatbot*/
 #chatBotButton{
     position: fixed;
     bottom: 5%;
@@ -258,3 +268,130 @@ margin-bottom: 10px;
 padding: 10px;
 }
 
+.popup-content-close-button{
+    position: relative;
+}
+
+.popup-content-close-button::before,
+.popup-content-close-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 2px;
+    background-color: black;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+.popup-content-close-button::before {
+    transform: rotate(-45deg);
+}
+
+
+/*This is for the room page*/
+.roomBackButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+/*This is for the NAV Bar*/
+/* Style the navigation bar */
+nav {
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    height:80px;
+  }
+
+/* Style the logo and logo name */
+nav .logo {
+display: flex;
+align-items: center;
+}
+
+nav .logo img {
+height: 30px; /* Adjust the height as needed */
+margin-right: 10px;
+}
+
+nav .logo-name {
+font-size: 20px;
+font-weight: bold;
+}
+
+/* Style the navigation links */
+nav .nav-links {
+list-style: none;
+}
+
+nav .nav-links li {
+
+margin-right: 50px;
+float:right;
+}
+
+nav .nav-links li a {
+text-decoration: none;
+/* color: #333; */
+font-weight: bold;
+}
+
+nav .nav-links li a:hover {
+color: #555;
+}
+
+nav .meetOurDoc{
+    padding: 20px;
+    background-color: #979ab5;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+}
+
+
+
+/* This is for the doctor page */
+.staff-card {
+    width: 300px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .staff-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+  
+  .staff-name {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  .staff-role {
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  
+  .staff-details {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .staff-details p {
+    margin-bottom: 10px;
+  }
+  
+  .read-more {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }

@@ -29,3 +29,10 @@ spec:
               name: room-service
               port: 
                 number: 5000
+        - path: /doctor
+          pathType: Prefix
+          backend:
+            service:
+              name: doctor-service
+              port: 
+                number: 5000

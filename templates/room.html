@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
+
+<a href="{{ url_for('home') }}" class="roomBackButton">Back</a>
+
 <div class="message-box">
-  <h2>Chat Room: {{code}}</h2>
+  <h2>ChatRoom Code: {{code}}</h2>
+
   <div class="messages" id="messages"></div>
   <div class="inputs">
     <input
