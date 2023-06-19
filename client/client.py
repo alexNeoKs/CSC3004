@@ -21,3 +21,4 @@ if __name__ == '__main__':
 # python client/client.py
 #-----------------------------------------------------------------------------------------------
 # openssl req -new -newkey rsa:2048 -days 365 -nodes -x509 -keyout client.key -out client.crt
+# openssl pkcs12 -export -in client.crt -inkey client.key -out client.p12

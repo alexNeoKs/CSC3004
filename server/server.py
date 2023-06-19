@@ -47,7 +47,7 @@ if __name__ == '__main__':
 
     bindsocket = socket.socket()
     bindsocket.bind(("127.0.0.1", 8080))
-    bindsocket.listen(10)
+    bindsocket.listen(15)
 
     while True:
         try:
