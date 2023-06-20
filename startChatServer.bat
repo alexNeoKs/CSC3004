@@ -1,5 +1,9 @@
 minikube start
+
 minikube addons enable ingress
+START kubectl port-forward -n ingress-nginx service/ingress-nginx-controller 8080:80
+START kubectl port-forward -n ingress-nginx service/ingress-nginx-controller  443:443
+
 minikube image build -t chatserver .
 minikube image ls
 
@@ -17,4 +21,4 @@ kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission
 kubectl apply -f ingress.yaml
 kubectl get ingress flask-ingress --output=wide
 
-minikube tunnel
+START minikube tunnel
