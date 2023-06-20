@@ -22,3 +22,4 @@ kubectl apply -f ingress.yaml
 kubectl get ingress flask-ingress --output=wide
 
 START minikube tunnel
+START curl -v --cacert ca.crt --key client.key --cert client.crt https://chatserver.com/
