@@ -1,0 +1,96 @@
+{% extends 'base.html' %} {% block content %}
+<div style="display:block">
+
+<h2>Meet Our Therapists</h2>
+<div class="card">
+  <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Image" >
+  <h2>John Doe</h2>
+  <p>Role: Manager</p>
+  <div class="hidden">
+    <p>Professional Profile: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan felis vitae erat luctus, ut accumsan odio pellentesque.</p>
+    <p>Qualifications: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Languages Spoken: English, Spanish</p>
+  </div>
+  <button class="expand-button">Read More</button>
+</div>
+
+<div class="card">
+  <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Image" >
+  <h2>Jane Smith</h2>
+  <p>Role: Developer</p>
+  <div class="hidden">
+    <p>Professional Profile: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan felis vitae erat luctus, ut accumsan odio pellentesque.</p>
+    <p>Qualifications: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Languages Spoken: English, French</p>
+  </div>
+  <button class="expand-button">Read More</button>
+</div>
+
+<div class="card">
+  <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Image" >
+  <h2>Michael Johnson</h2>
+  <p>Role: Designer</p>
+  <div class="hidden">
+    <p>Professional Profile: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan felis vitae erat luctus, ut accumsan odio pellentesque.</p>
+    <p>Qualifications: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Languages Spoken: English, German</p>
+  </div>
+  <button class="expand-button">Read More</button>
+</div>
+
+<div class="card">
+  <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Image" >
+  <h2>John Doe</h2>
+  <p>Role: Manager</p>
+  <div class="hidden">
+    <p>Professional Profile: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan felis vitae erat luctus, ut accumsan odio pellentesque.</p>
+    <p>Qualifications: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Languages Spoken: English, Spanish</p>
+  </div>
+  <button class="expand-button">Read More</button>
+</div>
+
+<div class="card">
+  <img src="{{ url_for('static', filename='images/2.jpg') }}" alt="Image" >
+  <h2>Jane Smith</h2>
+  <p>Role: Developer</p>
+  <div class="hidden">
+    <p>Professional Profile: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan felis vitae erat luctus, ut accumsan odio pellentesque.</p>
+    <p>Qualifications: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Languages Spoken: English, French</p>
+  </div>
+  <button class="expand-button">Read More</button>
+</div>
+
+<div class="card">
+  <img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Image" >
+  <h2>Michael Johnson</h2>
+  <p>Role: Designer</p>
+  <div class="hidden">
+    <p>Professional Profile: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan felis vitae erat luctus, ut accumsan odio pellentesque.</p>
+    <p>Qualifications: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <p>Languages Spoken: English, German</p>
+  </div>
+  <button class="expand-button">Read More</button>
+</div>
+  
+<script>
+  var expandButtons = document.getElementsByClassName("expand-button");
+
+  for (var i = 0; i < expandButtons.length; i++) {
+    expandButtons[i].addEventListener("click", function() {
+      var hiddenContent = this.previousElementSibling;
+      hiddenContent.classList.toggle("hidden");
+
+      if (this.innerText === "Read More") {
+        this.innerText = "Read Less";
+      } else {
+        this.innerText = "Read More";
+      }
+    });
+  }
+</script>
+
+
+</div>
+{% endblock %}

@@ -12,8 +12,22 @@
       integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
       crossorigin="anonymous"
     ></script>
+    <script src="https://kit.fontawesome.com/ac75fb8e9c.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <nav>
+      <div class="logo">
+        <span class="logo-name">T17 Chatserver</span>
+       
+        
+      </div>
+      <ul class="nav-links">
+        
+        <li><a href="{{ url_for('doctor') }}" class="meetOurDoc">Meet Our Doctors</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+
     <div class="content">{% block content %} {% endblock %}</div>
   </body>
 </html>

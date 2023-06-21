@@ -23,7 +23,7 @@
 </form> -->
 
 <img src="{{ url_for('static', filename='images/home.png') }}" alt="Image" id="homePageImg">
-<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Image" id="homePagelogo">
+
 <h3 id="homePageTitle">
     Unlock Healing<br>
     with the Comforts of Privacy
@@ -32,26 +32,29 @@
     With our list of certified therapists, choose to chat <br> with any who are online
     Or create your own room, <br>and converse with those who share similar experiences.
 </p>
-<button type="submit" id="createRoomButton">Create Room</button>
-<button type="submit" id="JoinRoomButton">Join A Room</button>
+<button type="submit" id="createRoomButton">Get Started Now</button>
+
 
 <div id="popup" class="popup">
+   
     <div class="popup-content">
-      <h2>Creating a room</h2>
+      <div class="popup-content-close-button" id="popup-content-close-button"></div>
+      <h2>Join A Pre-existing Room <br/>or Create One Yourself!</h2>
       <form method="post" class="buttons">
       
       <div>
-        <label>Enter A Name:</label>
+        <label>Enter A Name To Use:</label><br/><br/>
         <input
           type="text"
           placeholder="Pick a name!"
           name="name"
           value="{{name}}"
+          
         />
       </div>
       <div class="join">
-        <input type="text" placeholder="Room Code" name="code" value="{{code}}" />
-        <button type="submit" name="join">Join a Room</button>
+        <input type="text" placeholder="Enter A Room Code" name="code" value="{{code}}" /><br/>
+        <button type="submit" name="join" >Join a Room</button>
       </div>
       <button type="submit" name="create" class="create-btn">Create a Room</button>
       {% if error %}
@@ -90,6 +93,19 @@
 
 
 <script>
+
+    var socket = io();
+
+    socket.on('connect', function() {
+        setInterval(function() {
+            socket.emit('ping');
+        }, 5000);  // Adjust the interval as needed
+    });
+
+    socket.on('pong', function() {
+        // Optional: Add custom logic here if desired
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         var chatToggle = document.querySelector('.chat-toggle');
         var chatPopup = document.querySelector('.chat-popup');
@@ -107,43 +123,14 @@
 
     document.getElementById('createRoomButton').addEventListener('click', function() {
         document.getElementById('popup').style.display = 'block';
-      });
-      
-    /*
-    document.getElementById('popupForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        // Get the input values
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
+    });
     
-        // Perform actions with the input values (e.g., send data to server, perform validation, etc.)
-        
-        // Close the popup
+    document.getElementById('popup-content-close-button').addEventListener('click', function() {
         document.getElementById('popup').style.display = 'none';
     });
-    */
-
-
-    document.getElementById('JoinRoomButton').addEventListener('click', function() {
-        document.getElementById('popup2').style.display = 'block';
-      });
     
-    /*
-    document.getElementById('popupForm2').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        // Get the input values
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-    
-        // Perform actions with the input values (e.g., send data to server, perform validation, etc.)
-        
-        // Close the popup
-        document.getElementById('popup2').style.display = 'none';
-    });
-    */
 
+    
     
 </script>
 
