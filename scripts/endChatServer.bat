@@ -1,7 +1,11 @@
-docker rmi chatserver:latest
-kubectl delete ingress    flask-ingress
-kubectl delete secret     self-tls
-kubectl delete secret     ca-secret
-kubectl delete service    flask-service
-kubectl delete deployment flask-app
+
+
+kubectl  delete service    -A --all
+kubectl  delete deployment -A --all
+kubectl  delete replicaset -A --all
+kubectl  delete pods       -A --all
+kubectl  delete ingress    -A --all
+kubectl  delete secret     -A --all
+minikube image rm chatserver:latest
+minikube delete               --all
 minikube stop
