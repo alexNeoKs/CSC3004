@@ -23,7 +23,7 @@
 </form> -->
 
 <img src="{{ url_for('static', filename='images/home.png') }}" alt="Image" id="homePageImg">
-
+<img src="{{ url_for('static', filename='images/undraw_Join_re_w1lh.png') }}" alt="Image" id="homePageImgextra">
 <h3 id="homePageTitle">
     Unlock Healing<br>
     with the Comforts of Privacy
@@ -33,6 +33,9 @@
     Or create your own room, <br>and converse with those who share similar experiences.
 </p>
 <button type="submit" id="createRoomButton">Get Started Now</button>
+
+<button type="submit" onclick="redirectToNewPage()" id="doctorButton">Meet Our Doctors</button>
+
 
 
 <div id="popup" class="popup">
@@ -130,6 +133,9 @@
     });
     
 
+    function redirectToNewPage() {
+      window.location.href = "/doctor";
+  }
     
     
 </script>

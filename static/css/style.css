@@ -413,3 +413,29 @@ nav .meetOurDoc{
   }
 
 
+  #doctorButton {
+    position: absolute;
+    left: 24%;
+    top: 70%;
+    }
+
+
+    #homePageImgextra{
+        width:200px;
+     
+        right: 10%;
+        position: absolute;
+        animation: bounce 4s infinite;
+    }
+
+    @keyframes bounce {
+        0% {
+            top: 0;
+        }
+        50% {
+            top: 50px;
+        }
+        100% {
+            top: 0;
+        }
+    }
