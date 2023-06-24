@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: flask-app
-          imagePullPolicy: Never
-          image: chatserver:latest
+          imagePullPolicy: Always
+          image: junhao99/chatserver:latest
           ports:
             - containerPort: 5000
           resources:
